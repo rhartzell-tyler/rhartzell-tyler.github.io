@@ -40,16 +40,9 @@ promoPopupClose.addEventListener('click', e => {
 });
 
 const appleLink = document.getElementById('apple_link');
-appleLink.addEventListener('click', e => {
-    ga('send', 'event', 'link promo', 'app');
-    window.open('https://apps.apple.com/us/app/fluid-simulation/id1443124993');
-});
 
 const googleLink = document.getElementById('google_link');
-googleLink.addEventListener('click', e => {
-    ga('send', 'event', 'link promo', 'app');
-    window.open('https://play.google.com/store/apps/details?id=games.paveldogreat.fluidsimfree');
-});
+
 
 // Simulation section
 
@@ -151,7 +144,6 @@ function getWebGLContext(canvas) {
         formatR = getSupportedFormat(gl, gl.RGBA, gl.RGBA, halfFloatTexType);
     }
 
-    ga('send', 'event', isWebGL2 ? 'webgl2' : 'webgl', formatRGBA == null ? 'not supported' : 'supported');
 
     return {
         gl,
@@ -236,7 +228,6 @@ function startGUI() {
     let github = gui.add({
         fun: () => {
             window.open('https://github.com/rhartzell/');
-            ga('send', 'event', 'link button', 'github');
         }
     }, 'fun').name('Github');
     github.__li.className = 'cr function bigFont';
@@ -247,7 +238,6 @@ function startGUI() {
 
     let twitter = gui.add({
         fun: () => {
-            ga('send', 'event', 'link button', 'twitter');
             window.open('https://twitter.com/way2extreme');
         }
     }, 'fun').name('Twitter');
@@ -259,7 +249,6 @@ function startGUI() {
 
     let discord = gui.add({
         fun: () => {
-            ga('send', 'event', 'link button', 'discord');
             window.open('https://discordapp.com/invite/CeqZDDE');
         }
     }, 'fun').name('Discord');
@@ -271,7 +260,6 @@ function startGUI() {
 
     let app = gui.add({
         fun: () => {
-            ga('send', 'event', 'link button', 'app');
             window.open('http://onelink.to/5b58bn');
         }
     }, 'fun').name('Check out mobile app');
